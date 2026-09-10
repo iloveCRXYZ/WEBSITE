@@ -413,6 +413,7 @@ a.info-card:hover{
 }
 .info-text{flex:1;min-width:0;}
 .info-name-row{
+  padding-top: 5px;
   display:flex;
   align-items:center;
   gap:8px;

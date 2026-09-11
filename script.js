@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (player && audio && playBtn && title && art && artImage) {
     const tracks = [
       {
-        title: "Death Metal",
+        title: "DᐳEᐳAᐳTᐳHᐳMᐳEᐳTᐳAᐳL",
         audio: "assets/sounds/DᐳEᐳAᐳTᐳHᐳMᐳEᐳTᐳAᐳL.mp3",
         art: "assets/logos/DᐳEᐳAᐳTᐳHᐳMᐳEᐳTᐳAᐳL.jpg"
       },
@@ -121,7 +121,37 @@ document.addEventListener("DOMContentLoaded", () => {
         title: "ETA",
         audio: "assets/sounds/NEMZZZ - ETA (FEAT. LUCIANO).mp3",
         art: "assets/logos/ETA.jpg"
-      }
+      },
+      {
+        title: "Bôa -  Duvet",
+        audio: "assets/sounds/Bôa -  Duvet (Official Video).mp3",
+        art: "assets/logos/Duvet.jpg"
+      },
+      {
+        title: "Childish Gambino - 3005",
+        audio: "assets/sounds/Childish Gambino - 3005.mp3",
+        art: "assets/logos/3005.jpg"
+      },
+      {
+        title: "misery.",
+        audio: "assets/sounds/misery.mp3",
+        art: "assets/logos/misery.jpg"
+      },
+      {
+        title: "Theme from the Unreleased film Sayulita (Demo)",
+        audio: "assets/sounds/TV Girl - Theme from the Unreleased film Sayulita (Demo).mp3",
+        art: "assets/logos/Theme from the Unreleased film Sayulita (Demo).jpg"
+      },
+      {
+        title: "Carnival",
+        audio: "assets/sounds/Carnival.mp3",
+        art: "assets/logos/Carnival.jpg"
+      },
+      {
+        title: "Time Flies (Freestyle)",
+        audio: "assets/sounds/MKAY - Time Flies (Freestyle).mp3",
+        art: "assets/logos/MKAY - Time Flies.jpg"
+      },
     ];
     let trackIndex = 0;
 

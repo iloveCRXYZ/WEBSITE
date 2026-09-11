@@ -138,5 +138,5 @@ python3 -m http.server 8000
 ---
  
 <div align="center">
-Made by **CRXYZ**
+Made by CRXYZ
 </div>

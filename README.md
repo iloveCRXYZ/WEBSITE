@@ -6,14 +6,14 @@ A guns.lol-style profile card built with plain HTML, CSS, and JavaScript — no 
 
 > Replace these with real screenshots once it's deployed — drop the image files into `/screenshots` and the links below will pick them up automatically.
 
-![Profile section](screenshots/profile-section.png)
+![Profile section](assets\screenshots\main.png)
 ![Skills section](screenshots/skills-section.png)
-![Music player](screenshots/player-section.png)
+![Music player](assets\screenshots\music.png)
 
 ## Folder structure
 
 ```
-gunslol_site/
+site/
 ├── index.html          # markup only — no inline CSS or JS
 ├── css/
 │   └── styles.css      # all styling, incl. responsive PC layout
@@ -38,15 +38,15 @@ All outbound links live in one place, `js/script.js`:
 
 ```js
 const LINKS = {
-  discord:      "https://discord.com/users/1262858645197164665",
-  youtubeMusic1:"https://music.youtube.com/playlist?list=PLLCN5vtbAvaxm1YhUd5-BSyqwdIW0XdCK&si=qC-nB_XnoNo0U3dh",
-  youtubeMusic2:"https://music.youtube.com/playlist?list=PLLCN5vtbAvawKBYv6VHi3EI56_6d6t7m6&si=6Wqcu-MhuhMI8kNp",
-  youtube:      "https://www.youtube.com/@00CRXYZ",
-  spotify:      "https://open.spotify.com/user/31ivq4ir5groo4woiqxqfrgs63ly?si=8a7bcc7c910e4a5f",
-  github:       "https://github.com/iloveCRXYZ",
-  twitch:       "https://www.twitch.tv/ilovecrxyz",
-  steam:        "https://steamcommunity.com/profiles/76561199518238305/"
-};```
+  discord:       "https://discord.com/users/REPLACE_WITH_YOUR_ID",
+  youtubeMusic1: "https://music.youtube.com/channel/REPLACE_ME",
+  youtubeMusic2: "https://music.youtube.com/channel/REPLACE_ME",
+  youtube:       "https://youtube.com/@REPLACE_ME",
+  github:        "https://github.com/REPLACE_ME",
+  twitch:        "https://twitch.tv/REPLACE_ME",
+  steam:         "https://steamcommunity.com/id/REPLACE_ME"
+};
+```
 
 Swap the placeholder URLs for your real ones — nothing else needs to change.
 

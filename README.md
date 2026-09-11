@@ -11,7 +11,7 @@
 
 | Profile | Skills | Player |
 |:---:|:---:|:---:|
-| ![Profile section](assets\screenshots\main.png) | ![Skills section](assets\screenshots\skils.png) | ![Music player](assets\screenshots\music.png) |
+| ![Profile section](assets/screenshots/main.png) | ![Skills section](assets/screenshots/skils.png) | ![Music player](assets/screenshots/music.png) |
 
 
 ---

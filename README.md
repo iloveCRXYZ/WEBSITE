@@ -4,8 +4,6 @@ A guns.lol-style profile card built with plain HTML, CSS, and JavaScript — no 
 
 ## Preview
 
-> Replace these with real screenshots once it's deployed — drop the image files into `/screenshots` and the links below will pick them up automatically.
-
 ![Profile section](assets\screenshots\main.png)
 ![Skills section](screenshots/skills-section.png)
 ![Music player](assets\screenshots\music.png)

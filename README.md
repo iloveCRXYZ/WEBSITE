@@ -1,39 +1,50 @@
-# CRXYZ — Profile Page
+<div align="center">
+# ✨ CRXYZ — Profile Page ✨
+ 
+🖤 A guns.lol-style profile card, built from scratch with plain **HTML**, **CSS** & **JS**
+🚫 No frameworks · 🚫 No build step · ⚡ Just open and go
+ 
+</div>
+---
+ 
+## 📸 Preview
 
-A guns.lol-style profile card built with plain HTML, CSS, and JavaScript — no frameworks, no build step. Glassmorphic panels for profile info, certificates/languages/tech stack, and a music player, plus fully clickable social links.
+| Profile | Skills | Player |
+|:---:|:---:|:---:|
+| ![Profile section](assets\screenshots\main.png) | ![Skills section](assets\screenshots\skils.png) | ![Music player](assets\screenshots\music.png) |
 
-## Preview
 
-![Profile section](assets\screenshots\main.png)
-![Skills section](screenshots/skills-section.png)
-![Music player](assets\screenshots\music.png)
-
-## Folder structure
-
+---
+ 
+## 🗂️ Folder structure
+ 
 ```
-site/
-├── index.html          # markup only — no inline CSS or JS
-├── css/
-│   └── styles.css      # all styling, incl. responsive PC layout
-├── js/
-│   └── script.js       # link config + click/keyboard wiring
-├── screenshots/        # preview images used in this README
-└── README.md
+gunslol_site/
+├── 📄 index.html          # markup only — no inline CSS or JS
+├── 🎨 css/
+│   └── styles.css         # all styling, incl. responsive PC layout
+├── ⚙️ js/
+│   └── script.js          # link config + click/keyboard wiring
+├── 🖼️ screenshots/         # preview images used in this README
+└── 📘 README.md
 ```
-
-Everything is split by concern — the HTML has no `<style>` or `<script>` tags, so `index.html`, `css/styles.css`, and `js/script.js` all need to stay in the same relative layout for the page to render correctly.
-
-## Features
-
-- **Glass panels** — three separate frosted-glass cards: profile info, certificates/languages/tech stack, and the music player
-- **Hover tooltips** — languages and the Cisco certificate status show a small popup on hover (proficiency level / "studying for it right now")
-- **Working buttons** — the Discord card and every social icon are real links, wired through a single config object (see below)
-- **Responsive** — under ~520px it behaves like a phone screen; above that it becomes a centered card suited to desktop
-
-## Editing your links
-
-All outbound links live in one place, `js/script.js`:
-
+ 
+⚠️ **Keep the folders together** — `index.html`, `css/styles.css`, and `js/script.js` all reference each other by relative path, so the layout has to stay intact for the page to render.
+ 
+---
+ 
+## 🚀 Features
+ 
+- 🧊 **Glass panels** — three separate frosted-glass cards: profile info, certificates/languages/tech stack, and the music player
+- 💬 **Hover tooltips** — languages and the Cisco certificate status pop up a small badge on hover (proficiency level / *"studying for it right now"*)
+- 🔗 **Working buttons** — the Discord card and every social icon are real, keyboard-accessible links
+- 📱💻 **Responsive** — phone-sized under ~520px, becomes a centered desktop card above that
+---
+ 
+## 🔧 Editing your links
+ 
+All outbound links live in **one place** — `js/script.js`:
+ 
 ```js
 const LINKS = {
   discord:       "https://discord.com/users/REPLACE_WITH_YOUR_ID",
@@ -45,27 +56,29 @@ const LINKS = {
   steam:         "https://steamcommunity.com/id/REPLACE_ME"
 };
 ```
-
-Swap the placeholder URLs for your real ones — nothing else needs to change.
-
-## How the buttons are wired
-
-Any element in `index.html` with a `data-link="key"` attribute gets picked up automatically and pointed at `LINKS[key]`:
-
+ 
+✏️ Just swap the placeholder URLs for your real ones — nothing else needs to change.
+ 
+---
+ 
+## 🖱️ How the buttons are wired
+ 
+Any element in `index.html` tagged with `data-link="key"` gets auto-connected to `LINKS[key]`:
+ 
 ```html
 <!-- index.html -->
 <a class="info-card" data-link="discord" aria-label="Open Discord profile">
   ...
 </a>
 ```
-
+ 
 ```js
 // js/script.js
 document.querySelectorAll("[data-link]").forEach((el) => {
   const key = el.getAttribute("data-link");
   const url = LINKS[key];
   if (!url) return;
-
+ 
   const open = () => window.open(url, "_blank", "noopener");
   el.addEventListener("click", open);
   el.addEventListener("keydown", (e) => {
@@ -76,14 +89,18 @@ document.querySelectorAll("[data-link]").forEach((el) => {
   });
 });
 ```
-
-Adding a new social icon later is just: give it a `data-link="yourKey"` attribute in the HTML, and add `yourKey: "https://..."` to the `LINKS` object.
-
-## Hover tooltip pattern
-
-Languages and the certificate status both use the same lightweight CSS-only tooltip — no JS involved:
-
+ 
+➕ **Adding a new icon later?** Give it a `data-link="yourKey"` in the HTML, then add `yourKey: "https://..."` to `LINKS`. That's it.
+ 
+---
+ 
+## 💡 Hover tooltip pattern
+ 
+Languages and the certificate status both use the same lightweight **CSS-only** tooltip — zero JS involved:
+ 
 ```css
+/* css/styles.css */
+.lang-chip::after{
   content:attr(data-level);
   position:absolute;
   bottom:calc(100% + 10px);
@@ -92,25 +109,34 @@ Languages and the certificate status both use the same lightweight CSS-only tool
 }
 .lang-chip:hover::after{ opacity:1; }
 ```
-
+ 
 ```html
 <span class="lang-chip" data-level="Fluent">English</span>
 ```
-
-To add a new language or change a proficiency level, just edit the `data-level` value.
-
-## Running locally
-
-No build tools needed — just open `index.html` in a browser, or serve the folder:
-
+ 
+🔤 To add a language or change a level, just edit the `data-level` value.
+ 
+---
+ 
+## 🏃 Running locally
+ 
+No build tools needed — just open `index.html`, or serve the folder:
+ 
 ```bash
-cd Website
+cd gunslol_site
 python3 -m http.server 8000
-# then visit http://localhost:8000
+# 🌐 then visit http://localhost:8000
 ```
-
-## Deploying to GitHub Pages
-
-1. Push this folder to a GitHub repo
-2. Repo **Settings → Pages** → set source to the branch/folder containing `index.html`
-3. Your page will be live at `https://<username>.github.io/<repo-name>/`
+ 
+---
+ 
+## 🌍 Deploying to GitHub Pages
+ 
+1. 📤 Push this folder to a GitHub repo
+2. ⚙️ Repo **Settings → Pages** → set source to the branch/folder containing `index.html`
+3. 🎉 Your page goes live at `https://<username>.github.io/<repo-name>/`
+---
+ 
+<div align="center">
+Made by **CRXYZ**
+</div>

@@ -5,7 +5,7 @@
 🚫 No frameworks · 🚫 No build step · ⚡ Just open and go
  
 </div>
----
+
  
 ## 📸 Preview
 

@@ -1,9 +1,9 @@
 <div align="center">
-# ✨ CRXYZ — Profile Page ✨
+ ✨ CRXYZ — Profile Page ✨
  
-🖤 A guns.lol-style profile card, built from scratch with plain **HTML**, **CSS** & **JS**
+A profile card, built from scratch with plain **HTML**, **CSS** & **JS**
 🚫 No frameworks · 🚫 No build step · ⚡ Just open and go
- 
+
 </div>
 
  

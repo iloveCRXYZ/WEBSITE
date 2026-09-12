@@ -9,6 +9,40 @@ const LINKS = {
   steam:        "https://steamcommunity.com/profiles/76561199518238305/"
 };
 
+const TECH_LINKS = {
+  "C++": "https://isocpp.org/",
+  "Python": "https://www.python.org/",
+  "JavaScript": "https://developer.mozilla.org/docs/Web/JavaScript",
+  "CSS": "https://developer.mozilla.org/docs/Web/CSS",
+  "HTML5": "https://developer.mozilla.org/docs/Web/HTML",
+  "TypeScript": "https://www.typescriptlang.org/",
+  "Java": "https://www.java.com/",
+
+  "MySQL": "https://www.mysql.com/",
+  "Supabase": "https://supabase.com/",
+  "MongoDB": "https://www.mongodb.com/",
+
+  "Vs Studio": "https://visualstudio.microsoft.com/",
+  "Notepad++": "https://notepad-plus-plus.org/",
+  "Vim": "https://www.vim.org/",
+
+  "Node.js": "https://nodejs.org/",
+  "Cloudflare": "https://www.cloudflare.com/",
+  "Unity": "https://unity.com/",
+  "Blender": "https://www.blender.org/",
+  "Git": "https://git-scm.com/",
+  "VirtualBox": "https://www.virtualbox.org/",
+  "XAMPP": "https://www.apachefriends.org/",
+
+  "Angular": "https://angular.dev/",
+  "Expo": "https://expo.dev/",
+  "React Native": "https://reactnative.dev/",
+
+  "Linux": "https://www.linux.org/",
+  "Kali Linux": "https://www.kali.org/",
+  "Windows": "https://www.microsoft.com/windows"
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   const techGrid = document.querySelector(".tech-grid");
   if (techGrid) {
@@ -39,6 +73,27 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     ];
     const techItems = [...techGrid.querySelectorAll(":scope > .tech-item")];
+
+    // Make every tech item a working link out to that technology's site.
+    techItems.forEach((item) => {
+      const name = item.querySelector(".tech-label")?.textContent.trim();
+      const url = name && TECH_LINKS[name];
+      if (!url) return;
+
+      item.style.cursor = "pointer";
+      item.setAttribute("role", "link");
+      item.setAttribute("tabindex", "0");
+      item.setAttribute("aria-label", `Open ${name} website`);
+
+      const open = () => window.open(url, "_blank", "noopener");
+      item.addEventListener("click", open);
+      item.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          open();
+        }
+      });
+    });
 
     techGrid.replaceChildren(...categories.map(({ title, items }) => {
       const category = document.createElement("div");

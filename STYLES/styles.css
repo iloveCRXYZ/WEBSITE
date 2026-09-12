@@ -105,6 +105,51 @@ body{
   color:#fff;
   cursor:default;
 }
+
+/* --- Education & Certifications section --- */
+
+.title-highlight{
+  display:inline-block;
+  background:rgba(255,255,255,0.92);
+  color:#141216;
+  padding:2px 8px;
+  border-radius:5px;
+}
+
+.cert-item--education{
+  align-items:flex-start;
+}
+
+.cert-year{
+  font-size:12px;
+  font-weight:600;
+  color:var(--text-dim);
+  margin-left:4px;
+}
+
+.cert-desc{
+  margin-top:8px;
+  font-size:13px;
+  line-height:1.6;
+  color:var(--text-dim);
+}
+
+.cert-tags{
+  margin-top:12px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.cert-tag{
+  font-size:12px;
+  font-weight:600;
+  color:#e7e2e6;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:20px;
+  padding:6px 12px;
+}
+
 .lang-chip::after{
   content:attr(data-level);
   position:absolute;
